@@ -10,8 +10,9 @@
     class BigFactorial
     {
         static void Main(string[] args)
-        {         
+        {
             int number = int.Parse(Console.ReadLine()); ;
+
             BigInteger fact = number;
                        
             for (int i = number - 1; i >= 1; i--)
