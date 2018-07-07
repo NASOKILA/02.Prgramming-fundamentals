@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookLibraryModification
+﻿namespace BookLibraryModification
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Book
     {
         public string Title { set; get; }
@@ -14,7 +14,5 @@ namespace BookLibraryModification
         public DateTime ReleaseDate{ set; get; }
         public int IsbnNumber { set; get; }
         public double Price { set; get; }
-
-
     }
 }

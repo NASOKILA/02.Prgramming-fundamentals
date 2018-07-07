@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IntersectionOfCircles
+﻿namespace IntersectionOfCircles
 {
-   public class IntersectionOfCircles
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    public class IntersectionOfCircles
     {
        public static void Main(string[] args)
         {
@@ -21,8 +21,7 @@ namespace IntersectionOfCircles
 
             bool result = Point.Intersect(circleOne, circleTwo, distace);
 
-            PrintResult(result);
-            
+            PrintResult(result);            
         }
 
         private static Circle SetCircleProperties(int[] inputCircle)
@@ -46,10 +45,6 @@ namespace IntersectionOfCircles
 
         private static double CalculateDistance(Circle p1, Circle p2)
         {
-            /* Za reshenieto se suzdava desen triugulnik !!!
-               formilata e koren kvadrat ot razlikata ot hiksovete na 
-               kvadrat po razlikata ot igrecite na kvadrat.   
-             */
             int sideA = Math.Abs(p1.centerPointX - p2.centerPointX);
             int sideB = Math.Abs(p1.centerPointY - p2.centerPointY);
             double sideC = Math.Pow(sideA, 2) + Math.Pow(sideB, 2);

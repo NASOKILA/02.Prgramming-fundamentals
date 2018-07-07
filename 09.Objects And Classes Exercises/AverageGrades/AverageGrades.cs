@@ -7,10 +7,10 @@ namespace AverageGrades
 {
     class AverageGrades
     {
-       public static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-           
+
             List<Student> Students = new List<Student>();
 
 
@@ -21,7 +21,7 @@ namespace AverageGrades
                     .Split(' ').ToArray();
 
                 List<double> GradesList = new List<double>();
-                string studentName = input[0];        // imeto
+                string studentName = input[0];
 
                 for (int j = 1; j < input.Length; j++)
                 {
@@ -30,29 +30,23 @@ namespace AverageGrades
                     if (grades > 6)
                         grades = grades / 100;
 
-                    GradesList.Add(grades);     // we add grades to gradeList
+                    GradesList.Add(grades);
                 }
 
-                Student student = new Student();   // DOBAVQME NAME, GRADES I AVERAGE GRADES TOVA NE E NAI PRAVILNIQ NACHIN !
+                Student student = new Student();
                 student.Name = studentName;
                 student.Grades = GradesList;
 
-                Students.Add(student); // dobavqme si studenta v spisuka studenti
-
+                Students.Add(student);
             }
 
-            // Students sega sudurja vsichki studenti !!!
-
-                foreach (var student1  in Students
-                    .Where(s => s.AverageGrade >= 5)  // vzimame tezi koito imat average > 5
-                    .OrderBy(s => s.Name)           // podrejdame po imena
-                    .ThenByDescending(s => s.AverageGrade))  // podrejdame po Average grade obache descending (ot gore na dolo)
-                {
-
-                Console.WriteLine("{0} -> {1:f2}",student1.Name, student1.AverageGrade);
-                }
-                
-         
+            foreach (var student1 in Students
+                .Where(s => s.AverageGrade >= 5)
+                .OrderBy(s => s.Name)
+                .ThenByDescending(s => s.AverageGrade))
+            {
+                Console.WriteLine("{0} -> {1:f2}", student1.Name, student1.AverageGrade);
+            }
         }
     }
 }

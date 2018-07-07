@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookLibrary
+﻿namespace BookLibrary
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class BookLibrary
     {
         static void Main(string[] args)
         {
 
             int n = int.Parse(Console.ReadLine());
-            
+
             List<Book> books = new List<Book>();
             for (int i = 0; i < n; i++)
             {
@@ -29,62 +29,47 @@ namespace BookLibrary
                     "dd.MM.yyyy", CultureInfo.InvariantCulture),
 
                     IsbnNumber = int.Parse(input[4]),
-                    
-
                 };
-                book.Price = double.Parse(input[5]) ;  // VAJNO V JUDJA TRUGVA NO TUK TRQBVA DA GO RAZDELQ NA 100 ZAPOMNI
 
-                books.Add(book);    // Dobavqme si knigata v spisaka s knigi
+                book.Price = double.Parse(input[5]);
 
+                books.Add(book);
             }
 
-
-
-
-            Library library = new Library      // dobavqme si v bibliotekata
+            Library library = new Library
             {
                 Name = "NASO",
                 books = books,
             };
 
-
-
-
-
             List<Book> sortedBooks = new List<Book>();
 
-            sortedBooks.Add(books[0]);   // dobavqme purvata kniga
+            sortedBooks.Add(books[0]);
 
-            for (int i = 1; i < books.Count; i++)  // zapochvame ot vtorata kniga PURVATA VECHE Q SUDURJAME
+            for (int i = 1; i < books.Count; i++)
+            {
+
+                bool containsAutor = false;
+
+                for (int j = 0; j < sortedBooks.Count; j++)
                 {
-                //  double sumOfPricesByAuthor = 0;
-
-                bool containsAutor = false;                                     
-                
-                    for (int j = 0; j < sortedBooks.Count; j++)
+                    if (sortedBooks[j].Autor == books[i].Autor)
                     {
-                        if (sortedBooks[j].Autor == books[i].Autor) // ako sortedbooks sudurja avtor kato tozi na books
-                        {
-                            containsAutor = true;
-                            sortedBooks[j].Price += books[i].Price;  // samo dobavi cenata kum starata cena
-
-                        }
-          
+                        containsAutor = true;
+                        sortedBooks[j].Price += books[i].Price;
                     }
+                }
 
-                if (containsAutor == false)   
-                    sortedBooks.Add(books[i]);  // Ako nqma takava kniga s takuv avtor mi dobavi knigata
-
+                if (containsAutor == false)
+                    sortedBooks.Add(books[i]);
             }
 
             foreach (var book in sortedBooks
                 .OrderByDescending(b => b.Price)
                 .ThenBy(b => b.Autor))
             {
-                Console.WriteLine("{0} -> {1:f2}",book.Autor, book.Price);
+                Console.WriteLine("{0} -> {1:f2}", book.Autor, book.Price);
             }
-
-
 
         }
     }

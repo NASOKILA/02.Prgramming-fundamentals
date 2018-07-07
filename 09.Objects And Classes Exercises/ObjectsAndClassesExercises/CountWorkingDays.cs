@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CountWorkingDays
+﻿namespace CountWorkingDays
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class CountWorkingDays
     {
         static void Main(string[] args)
@@ -19,7 +19,7 @@ namespace CountWorkingDays
             DateTime endDate = DateTime.ParseExact(secondDate,
                 "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
-            DateTime[] holidays = new DateTime[] { // year, month, day
+            DateTime[] holidays = new DateTime[] { 
 
                 new DateTime(endDate.Year,01,01),
                 new DateTime(endDate.Year,03,03),
@@ -34,25 +34,21 @@ namespace CountWorkingDays
                 new DateTime(endDate.Year,12,26),
 
             };
-
-
+            
             int result = 0;
+
             for (DateTime i = startDate; i <= endDate;)
             {
                 if (!(i.DayOfWeek.ToString().Equals("Saturday") || 
                     i.DayOfWeek.ToString().Equals("Sunday")) &&
                     !holidays.Contains(i))
                 {
-                    // Ako ne e pochiven den i ako ne e praznik uvelichavame s edno
-                    
                     result++;
                 }
                 i = i.AddDays(1);
             }
 
             Console.WriteLine(result);
-
-            
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdvertisementMessage
+﻿namespace AdvertisementMessage
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class AdvertisementMessage
     {
         static void Main(string[] args)
@@ -17,9 +17,9 @@ namespace AdvertisementMessage
                 "Makes miracles. I am happy of the results!", "I cannot believe but now I feel awesome."
                 , "Try it yourself, I am very satisfied.", "I feel great!"};
 
-            string[] Authors = {"Diana", "Petya", "Stella", "Elena", "Katya", "Iva", "Annie", "Eva"};
+            string[] Authors = { "Diana", "Petya", "Stella", "Elena", "Katya", "Iva", "Annie", "Eva" };
 
-            string[] Cities = {"Burgas", "Sofia", "Plovdiv", "Varna", "Ruse"};
+            string[] Cities = { "Burgas", "Sofia", "Plovdiv", "Varna", "Ruse" };
 
             int n = int.Parse(Console.ReadLine());
 
@@ -31,17 +31,10 @@ namespace AdvertisementMessage
                 var phaseIndex = obj.Next(0, Phases.Length);
                 var eventsIndex = obj.Next(0, Events.Length);
                 var authorIndex = obj.Next(0, Authors.Length);
-                var cityIndex =  obj.Next(0, Cities.Length);
+                var cityIndex = obj.Next(0, Cities.Length);
 
                 Console.WriteLine($"{Phases[phaseIndex]}{Events[eventsIndex]}{Authors[authorIndex]} - {Cities[cityIndex]}");
             }
-
-            
-
-            
-
-
-
         }
     }
 }

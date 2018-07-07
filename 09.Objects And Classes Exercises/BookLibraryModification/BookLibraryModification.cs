@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-
-
-namespace BookLibraryModification
+﻿namespace BookLibraryModification
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+
     public class BookLibraryModification
     {
         public static void Main(string[] args)
@@ -31,46 +30,31 @@ namespace BookLibraryModification
 
 
                 };
-                book.Price = double.Parse(input[5]);  // VAJNO V JUDJA TRUGVA NO TUK TRQBVA DA GO RAZDELQ NA 100 ZAPOMNI
 
-                books.Add(book);    // Dobavqme si knigata v spisaka s knigi
+                book.Price = double.Parse(input[5]);
 
+                books.Add(book);
             }
 
-
-          
-
-
-
-            Library library = new Library      // dobavqme si v bibliotekata
+            Library library = new
             {
                 Name = "NASO",
                 books = books,
             };
 
-
-
-
-
-
-            DateTime date = DateTime.ParseExact(Console.ReadLine()         // TRQBVA DA PRINTIRAME KNIGITE OBISANI SLED TAZI DATA
+            DateTime date = DateTime.ParseExact(Console.ReadLine()
                , "dd.MM.yyyy", CultureInfo.InvariantCulture);
-
-
-
-
 
 
             List<Book> sortedBooks = new List<Book>();
 
-            foreach (var book in books)  // vsichki izdadeni knigi sled taq data gi slagame v sortedBooks
+            foreach (var book in books)
             {
-                if (book.ReleaseDate > date) {
+                if (book.ReleaseDate > date)
+                {
                     sortedBooks.Add(book);
                 }
             }
-
-
 
             foreach (var book in sortedBooks
                 .OrderBy(b => b.ReleaseDate)
@@ -78,8 +62,6 @@ namespace BookLibraryModification
             {
                 Console.WriteLine("{0} -> {1:f2}", book.Title, book.ReleaseDate.ToString("dd.MM.yyyy"));
             }
-
-
 
         }
     }

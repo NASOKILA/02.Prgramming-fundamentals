@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TeamworkProjects
+﻿namespace TeamworkProjects
 {
-    class TeamworkProjects
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    public class TeamworkProjects
     {
         static void Main(string[] args)
         {
-
             List<Teams> AllTeams2 = new List<Teams>();
             List<Teams> TeamsToDisband = new List<Teams>();
 
             int countOfTeams = int.Parse(Console.ReadLine());
 
             FormTeams(countOfTeams, AllTeams2);
-
-
-
-
+            
             char[] separator = { '-', '>' };
             string userJoinsTeam = Console.ReadLine();
 
@@ -29,10 +25,7 @@ namespace TeamworkProjects
                 string[] userJoinsTeamArr = userJoinsTeam.Split(separator).ToArray();
                 string user = userJoinsTeamArr[0];
                 string teamToJoin = userJoinsTeamArr[2];
-
-
-
-
+                
                 if (!AllTeams2.Any(t => t.Name.Equals(teamToJoin)))
                     Console.WriteLine("Team {0} does not exist!", teamToJoin);
                 else if (AllTeams2.Any(team => team.Members.Contains(user)))
@@ -42,32 +35,21 @@ namespace TeamworkProjects
                     foreach (var team in AllTeams2.Where(t => t.Name.Equals(teamToJoin)))
                     {
                         TeamsToDisband.Add(team);
-                    }
-                    
+                    }    
                 }
                 else
                     foreach (var team in AllTeams2)
                     {
-                        if (team.Name.Equals(teamToJoin))  // we add the members of the team
+                        if (team.Name.Equals(teamToJoin))  
                             team.Members.Add(user);
                     }
-
-
-
-
+                
                 userJoinsTeam = Console.ReadLine();
-
             }
-
-
-            //print result
-            PrintTeamsAndTeadsToDisband(AllTeams2, TeamsToDisband);
-
-        }
-
             
-
-
+            PrintTeamsAndTeadsToDisband(AllTeams2, TeamsToDisband);
+        }
+        
         private static void FormTeams(int countOfTeams, List<Teams> AllTeams)
         {
             for (int i = 0; i < countOfTeams; i++)
@@ -105,7 +87,7 @@ namespace TeamworkProjects
                 .ThenBy(t => t.Name))
             {
 
-                if (!TeamsToDisband.Contains(team))               // ako ne e ot teams to disband
+                if (!TeamsToDisband.Contains(team)) 
                 {
                     Console.WriteLine(team.Name);
                     Console.WriteLine("- {0}", team.CreatorName);
@@ -114,22 +96,15 @@ namespace TeamworkProjects
                         if (!member.Equals(team.CreatorName))
                             Console.WriteLine("-- {0}", member);
                     }
-                    
                 }     
-                
             }
-
-
-
-           
-                Console.WriteLine("Teams to disband:");
+            
+            Console.WriteLine("Teams to disband:");
 
             foreach (var teamToDis in TeamsToDisband.OrderBy(n => n))
             {   
                 Console.WriteLine(teamToDis.Name);
             }
-
         }
-        
     }
 }

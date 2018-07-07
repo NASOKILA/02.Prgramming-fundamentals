@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BigFactorial
+﻿namespace BigFactorial
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Numerics;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class BigFactorial
     {
         static void Main(string[] args)
-        {
-           
-
+        {         
             int number = int.Parse(Console.ReadLine()); ;
             BigInteger fact = number;
                        
@@ -20,8 +18,8 @@ namespace BigFactorial
             {
                 fact = fact * i;
             }
-            Console.WriteLine(fact);
-            
+
+            Console.WriteLine(fact);   
         }
     }
 }

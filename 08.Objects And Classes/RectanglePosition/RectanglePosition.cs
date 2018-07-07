@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RectanglePosition
+﻿namespace RectanglePosition
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class RectanglePosition
     {
         static void Main(string[] args)
@@ -15,21 +15,16 @@ namespace RectanglePosition
 
             Rectangle rectangleOne = new Rectangle
             {
-                Top = rectOnePoints[1],    //-5
-                Left = rectOnePoints[0],   // 4
-                Width = rectOnePoints[2],  // 6 
-                Height = rectOnePoints[3], // 10
-                
-                 //Bottom = ...  NE RABOTI TO E READ ONLY
-                 //napravihme si dadenite tochki
+                Top = rectOnePoints[1],
+                Left = rectOnePoints[0],
+                Width = rectOnePoints[2],
+                Height = rectOnePoints[3],
             };
 
-            rectangleOne.Bottom = Math.Abs(rectangleOne.Top) - rectangleOne.Height; // 5
+            rectangleOne.Bottom = Math.Abs(rectangleOne.Top) - rectangleOne.Height;
             rectangleOne.Bottom = Math.Abs(rectangleOne.Bottom);
 
-            rectangleOne.Right= rectangleOne.Width + rectangleOne.Left;  // 10
-
-
+            rectangleOne.Right = rectangleOne.Width + rectangleOne.Left;
 
             int[] rectTwoPoints = Console.ReadLine()
                 .Split(' ').Select(int.Parse).ToArray();
@@ -40,29 +35,24 @@ namespace RectanglePosition
                 Left = rectTwoPoints[0],
                 Width = rectTwoPoints[2],
                 Height = rectTwoPoints[3],
-
-                // Bottom = ...  NE RABOTI TO E READ ONLY
-                // napravihme si dadenite tochki
             };
 
-       //     if()
             rectangleTwo.Bottom = Math.Abs(rectangleTwo.Top) - rectangleTwo.Height;
             rectangleTwo.Bottom = Math.Abs(rectangleTwo.Bottom);
 
             rectangleTwo.Right = rectangleTwo.Width + rectangleTwo.Left;
 
 
-            var result = FirstInsadeSecond(rectangleOne, rectangleTwo).ToString(); // vkarvame i dvate pravougulnika i pravim otgovora da e tiString()
+            var result = FirstInsadeSecond(rectangleOne, rectangleTwo).ToString();
 
-            if(result == "False")
+            if (result == "False")
                 Console.WriteLine("Not inside");
             else
                 Console.WriteLine("Inside");
         }
 
 
-
-        public static bool FirstInsadeSecond(  // proverqvame dali ediniq e v drugiq
+        public static bool FirstInsadeSecond(
             Rectangle first,
             Rectangle second)
         {
@@ -73,6 +63,5 @@ namespace RectanglePosition
 
             return leftIsCorrect && rightIsCorrect && bottomIsCorrect && topIsCorrect;
         }
-
     }
 }
