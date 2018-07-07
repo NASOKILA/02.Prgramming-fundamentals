@@ -7,6 +7,7 @@ public class SequenceOfCommands_broken
 
     public static void Main()
     {
+
         int n = int.Parse(Console.ReadLine());
 
         long[] array = Console.ReadLine()
