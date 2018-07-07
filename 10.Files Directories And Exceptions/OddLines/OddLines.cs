@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-
-namespace OddLines
+﻿namespace OddLines
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.IO;
+    using System.Threading.Tasks;
+
     class OddLines
     {
         static void Main(string[] args)
@@ -20,9 +20,6 @@ namespace OddLines
                     File.AppendAllText("output.txt",file[i] + Environment.NewLine);                
                 }
             }
-            
-            /*Za nov red pishem Enviroment.NewLine  ili "\r\n"*/
-
         }
     }
 }
