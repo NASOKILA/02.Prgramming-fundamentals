@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FootballLeague
+﻿namespace FootballLeague
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class FootballLeague
     {
         static void Main(string[] args)
@@ -23,8 +23,6 @@ namespace FootballLeague
                 int firstTeamScore = int.Parse(score[0]);
                 int secondTeamScore = int.Parse(score[1]);
 
-
-
                 int firstIndex = linesArr[0].IndexOf(key) + key.Length;
                 int lastindex = linesArr[0].LastIndexOf(key) - firstIndex;
                 linesArr[0] = linesArr[0].Substring(firstIndex, lastindex);
@@ -32,8 +30,6 @@ namespace FootballLeague
                 char[] teamNameChr = linesArr[0].ToUpper().ToCharArray();
                 Array.Reverse(teamNameChr);
                 linesArr[0] = new string(teamNameChr);
-
-                
 
                 int firstIndex2 = linesArr[1].IndexOf(key) + key.Length;
                 int lastindex2 = linesArr[1].LastIndexOf(key) - firstIndex2;
@@ -43,24 +39,18 @@ namespace FootballLeague
                 Array.Reverse(teamNameChr2);
                 linesArr[1] = new string(teamNameChr2);
 
-
-
                 string firstTeam = linesArr[0];
                 string secondTeam = linesArr[1];
 
 
                 if (!TeamScore.Keys.Contains(firstTeam))
-                {
                     TeamScore[firstTeam] = firstTeamScore;
-                }
                 else
                     TeamScore[firstTeam] += firstTeamScore;
 
 
                 if (!TeamScore.Keys.Contains(secondTeam))
-                {
                     TeamScore[secondTeam] = secondTeamScore;
-                }
                 else
                     TeamScore[secondTeam] += secondTeamScore;
 

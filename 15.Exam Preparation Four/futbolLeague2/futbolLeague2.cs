@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace futbolLeague2
+﻿namespace futbolLeague2
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class futbolLeague2
     {
         static void Main(string[] args)
@@ -22,16 +22,12 @@ namespace futbolLeague2
                 string firstTeamName = GetTeamName(lineArgs[0], key);
                 string secondTeamName = GetTeamName(lineArgs[1], key);
 
-
                 string[] score = lineArgs[2].Split(':');
                 int firstTeamScore = int.Parse(score[0]);
                 int secondTeamScore = int.Parse(score[1]);
 
-               
                 AddScoteToTeam(teamGoals, firstTeamName, firstTeamScore, secondTeamName, secondTeamScore);
                 AddPointsToStandins(standings, firstTeamName, firstTeamScore, secondTeamName, secondTeamScore);
-
-               
 
                 line = Console.ReadLine();
             }
@@ -94,7 +90,7 @@ namespace futbolLeague2
                 else
                     Classification[secondTeam] += 0;
             }
-            else 
+            else
             {
                 if (!Classification.ContainsKey(firstTeam))
                     Classification[firstTeam] = 1;
@@ -106,7 +102,7 @@ namespace futbolLeague2
                 else
                     Classification[secondTeam] += 1;
             }
-            
+
         }
 
         private static void AddScoteToTeam(Dictionary<string, int> TeamScore, string firstTeam, int firstTeamScore, string secondTeam, int secondTeamScore)
@@ -118,7 +114,7 @@ namespace futbolLeague2
 
 
             if (!TeamScore.Keys.Contains(secondTeam))
-                TeamScore[secondTeam] = secondTeamScore;     
+                TeamScore[secondTeam] = secondTeamScore;
             else
                 TeamScore[secondTeam] += secondTeamScore;
 
@@ -130,28 +126,7 @@ namespace futbolLeague2
             int lastindex = teamName.LastIndexOf(key) - firstIndex;
             teamName = teamName.Substring(firstIndex, lastindex);
 
-
-
-            /*
-             SUBSTRING EXAMPLE:
-             string input = "OneTwoThree";
-
-             // Get first three characters.
-             string sub = input.Substring(0, 3);
-             output one
-             */
-
-
-
-
-            //MOJE I TAKA DA GO OBURNEM
-            //char[] teamNameChr = teamName.ToUpper().ToCharArray();
-            //Array.Reverse(teamNameChr);
-            //teamName = new string(teamNameChr);
-
-
-            return string.Join("",teamName.ToCharArray().Reverse()).ToUpper();
-
+            return string.Join("", teamName.ToCharArray().Reverse()).ToUpper();
         }
     }
 }

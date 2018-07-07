@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace ArrayManipulator
+﻿namespace ArrayManipulator
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     class ArrayManipulator
     {
         static void Main(string[] args)
         {
-
             string input = Console.ReadLine();
             int[] inputArr = input.Split().Select(int.Parse).ToArray();
 
@@ -20,41 +19,34 @@ namespace ArrayManipulator
             {
                 string[] command = Console.ReadLine().Split().ToArray();
 
-                
                 if (command[0].Equals("end"))
                     break;
-
 
                 if (command.Contains("exchange"))
                 {
                     int index = int.Parse(command[1]);
                     inputArr = Exchange(inputArr, index);
-                   
                 }
                 else if (command.Contains("max"))
                 {
-
                     if (command.Contains("even"))
                         MaxEvenNum(inputArr, maxEvenNum);
                     else if (command.Contains("odd"))
                         MaxOddNum(inputArr, maxOddNum);
-
                 }
                 else if (command.Contains("min"))
                 {
-
                     if (command.Contains("even"))
                         MinEvenNum(inputArr, minEvenNum);
                     else if (command.Contains("odd"))
-                         MinOddNum(inputArr, minOddNum);
-
+                        MinOddNum(inputArr, minOddNum);
                 }
                 else if (command.Contains("first"))
                 {
                     int count = int.Parse(command[1]);
                     if (command.Contains("even"))
                     {
-                        FirstEven(inputArr,count);
+                        FirstEven(inputArr, count);
                     }
                     else if (command.Contains("odd"))
                     {
@@ -74,16 +66,15 @@ namespace ArrayManipulator
                     }
                 }
             }
-           
-            Console.WriteLine("[" + string.Join(", ",inputArr) + "]");
 
+            Console.WriteLine("[" + string.Join(", ", inputArr) + "]");
         }
 
         private static void LastOdd(int[] inputArr, int count)
         {
             if (count > inputArr.Length)
                 Console.WriteLine("Invalid count");
-            else if(count.Equals(0))
+            else if (count.Equals(0))
                 Console.WriteLine("[]");
             else
             {
@@ -99,6 +90,7 @@ namespace ArrayManipulator
                             break;
                     }
                 }
+
                 lastOddElements.Reverse();
                 Console.WriteLine("[" + string.Join(", ", lastOddElements) + "]");
             }
@@ -182,24 +174,24 @@ namespace ArrayManipulator
         private static void MaxEvenNum(int[] inputArr, int maxEvenNum)
         {
 
-           
-                int indexOfMaxEvenNum = 0;
-                for (int i = 0; i < inputArr.Length; i++)
+
+            int indexOfMaxEvenNum = 0;
+            for (int i = 0; i < inputArr.Length; i++)
+            {
+                if (inputArr[i] % 2 == 0)
                 {
-                    if (inputArr[i] % 2 == 0)
+                    if (maxEvenNum <= inputArr[i])
                     {
-                        if (maxEvenNum <= inputArr[i])
-                        {
-                            maxEvenNum = inputArr[i];
-                            indexOfMaxEvenNum = i;
-                        }
+                        maxEvenNum = inputArr[i];
+                        indexOfMaxEvenNum = i;
                     }
                 }
+            }
 
-                if(maxEvenNum != 0)
-                    Console.WriteLine(indexOfMaxEvenNum);
-                else
-                    Console.WriteLine("No matches");
+            if (maxEvenNum != 0)
+                Console.WriteLine(indexOfMaxEvenNum);
+            else
+                Console.WriteLine("No matches");
 
         }
 
@@ -215,15 +207,13 @@ namespace ArrayManipulator
                         maxOddNumber = inputArr[i];
                         indexOfMaxOddNum = i;
                     }
-                 }
+                }
             }
 
-                if(maxOddNumber == 0)
-                    Console.WriteLine("No matches");
-                else
-                    Console.WriteLine(indexOfMaxOddNum);
-        
-            
+            if (maxOddNumber == 0)
+                Console.WriteLine("No matches");
+            else
+                Console.WriteLine(indexOfMaxOddNum);
         }
 
         private static void MinEvenNum(int[] inputArr, int minEvenNumber)
@@ -240,36 +230,35 @@ namespace ArrayManipulator
                     }
                 }
             }
-                if(minEvenNumber == 500000)
-                    Console.WriteLine("No matches");
-                else
+            if (minEvenNumber == 500000)
+                Console.WriteLine("No matches");
+            else
                 Console.WriteLine(indexOfMinEvenNum);
- 
         }
 
         private static void MinOddNum(int[] inputArr, int minOddNumber)
         {
             int indexOfMinOddNumber = 0;
-                for (int i = 0; i < inputArr.Length; i++)
+            for (int i = 0; i < inputArr.Length; i++)
+            {
+                if (inputArr[i] % 2 == 1)
                 {
-                    if (inputArr[i] % 2 == 1)
+                    if (minOddNumber >= inputArr[i])
                     {
-                        if (minOddNumber >= inputArr[i])
-                        {
-                            minOddNumber = inputArr[i];
-                            indexOfMinOddNumber = i;
-                        }
+                        minOddNumber = inputArr[i];
+                        indexOfMinOddNumber = i;
                     }
                 }
-          
-                if (minOddNumber == 500000)
-                    Console.WriteLine("No matches");
-                else
-                    Console.WriteLine(indexOfMinOddNumber);            
+            }
+
+            if (minOddNumber == 500000)
+                Console.WriteLine("No matches");
+            else
+                Console.WriteLine(indexOfMinOddNumber);
         }
 
         private static int[] Exchange(int[] inputArr, int index)
-        {         
+        {
 
             if (index >= inputArr.Length || index < 0)
             {
@@ -287,7 +276,7 @@ namespace ArrayManipulator
                 }
 
                 return newArr.ToArray();
-            }                       
+            }
         }
     }
 }

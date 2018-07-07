@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace CubicMessages2
+﻿namespace CubicMessages2
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
+
     class CubicMessages2
     {
         static void Main(string[] args)
@@ -14,11 +14,8 @@ namespace CubicMessages2
             string inputMessage = Console.ReadLine();
             int lengthOfMessage = int.Parse(Console.ReadLine());
 
-            //1234test4321
-
             while (true)
             {
-                // string[] messageArgs = message.Split()
                 string pattern = "^([0-9]+)([a-zA-Z]+)([^a-zA-Z]*)$";
                 Regex regex = new Regex(pattern);
                 Match match = regex.Match(inputMessage);
@@ -49,9 +46,7 @@ namespace CubicMessages2
 
                         if (containsLetterAtTheEnd == false)
                             PrintResult(message, numbersBeforeMessage, numbersAfterMessage);
-
                     }
-
                 }
 
 
@@ -59,14 +54,11 @@ namespace CubicMessages2
                 if (inputMessage.Equals("Over!"))
                     break;
                 lengthOfMessage = int.Parse(Console.ReadLine());
-
             }
-
         }
 
         private static void PrintResult(string message, List<char> numbersBeforeMessage, List<char> numbersAfterMessage)
         {
-
             Console.Write($"{message} == ");
             foreach (var num in numbersBeforeMessage)
             {
@@ -97,8 +89,8 @@ namespace CubicMessages2
                 }
 
             }
-            Console.WriteLine();
 
+            Console.WriteLine();
         }
     }
 }
