@@ -5,7 +5,6 @@ namespace ArraysAndLists
 {
     public class Arrays
     {
-
         public static void Increment(int num, int n) {
             num += n;
         }
