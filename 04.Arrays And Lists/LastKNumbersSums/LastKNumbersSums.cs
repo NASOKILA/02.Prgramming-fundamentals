@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace LastKNumbersSums
 {
     public class LastKNumbersSums
@@ -11,25 +10,22 @@ namespace LastKNumbersSums
             long k = long.Parse(Console.ReadLine());
             long[] seq = new long[n];
                
-            seq[0] = 1; // purviq element e 1
+            seq[0] = 1; 
 
-            for (long i = 1; i < n; i++)  // n puti     zapochva ot vtoriq element
+            for (long i = 1; i < n; i++)  
             {
-                long sum = 0; // na vsqka vrutka sumata e =  na 0
+                long sum = 0; 
 
-                for (long j = i-k; j <= i-1; j++) // ot   i-k   do   i-1   vinagie se vurti   k   puti
+                for (long j = i-k; j <= i-1; j++) 
                 {
                     if (j >= 0) 
                     {
                         sum += seq[j];
                     }
-
                 }
-                seq[i] = sum;
-              
+                seq[i] = sum;  
             }
-
-
+            
             for (int i = 0; i < n; i++)
             {
                 Console.Write(seq[i] + " ");

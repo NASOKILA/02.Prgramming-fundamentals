@@ -36,9 +36,9 @@ namespace MasterNumbers
 
             while (true)
             {
-                chislo = num2 % 10;  // namirame poslednata cifra  ot num      
-                result += chislo; // vkarvame q v result  
-                num2 = num2 / 10; // mahame poslednata cifra              
+                chislo = num2 % 10;      
+                result += chislo;   
+                num2 = num2 / 10;               
                 if (num2 == 0) { break; }
             }
 
@@ -60,7 +60,7 @@ namespace MasterNumbers
             {
                 chislo2 = realResult % 10;
                 realResult = realResult / 10;
-                if (chislo2 % 2 == 0) { hasEvenDigit = true; break; }   //ALL THE PELINDROME NUMBERS WITH SUM OF DIGITS DEVIDED BY 7 WITH AN EVEN DIGIT!
+                if (chislo2 % 2 == 0) { hasEvenDigit = true; break; }
                 else if (realResult == 0) { break; }
             }
             return hasEvenDigit;

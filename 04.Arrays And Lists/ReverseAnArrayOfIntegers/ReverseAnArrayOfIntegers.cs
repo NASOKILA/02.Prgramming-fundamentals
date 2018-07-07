@@ -1,20 +1,17 @@
-﻿using System;
-
-
+﻿
 namespace ReverseAnArrayOfIntegers
 {
+    using System;
+
     public class ReverseAnArrayOfIntegers
     {
         public static void Main(string[] args)
         {
-
             int n = int.Parse(Console.ReadLine());
             int[] Arr = new int[n];          
 
-            PrintArray(n,Arr);
-            
+            PrintArray(n,Arr);            
         }
-
 
         public static void SetArray(int num, int[] Array)
         {
@@ -26,15 +23,12 @@ namespace ReverseAnArrayOfIntegers
 
         public static void PrintArray(int num, int[] Array)
         {
-
-            SetArray(num, Array); // zaduljitelno izvikvame tozi metod tuk
+            SetArray(num, Array);
 
             for (int i = num-1; i >= 0; i--) // TRQBVA DA ZAPOCHNEM OT  n-1  DO  >=0   VAJNO!!!
             {
                 Console.WriteLine(Array[i]);
             }
-           
         }
-
     }
 }

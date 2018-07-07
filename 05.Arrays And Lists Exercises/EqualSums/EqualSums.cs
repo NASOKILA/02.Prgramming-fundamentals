@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EqualSums
+﻿namespace EqualSums
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class EqualSums
     {
         static void Main(string[] args)
@@ -19,7 +19,6 @@ namespace EqualSums
                 long sumOfLeft = 0;
                 long sumOfRight = 0;
                
-
                 for (int j = 0; j < i; j++)
                 {
                     sumOfLeft += numbers[j];
@@ -36,12 +35,9 @@ namespace EqualSums
                     Console.WriteLine(i);
                     break; 
                 }        
-
             }
-
-           
+            
             if (sumFound == false ) { Console.WriteLine("no"); }
-
         }
     }
 }

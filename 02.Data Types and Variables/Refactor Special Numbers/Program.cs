@@ -11,10 +11,6 @@ namespace Refactor_Special_Numbers
         static void Main(string[] args)
         {
 
-            /*You are given a working code that is a solution to Problem 5. Special Numbers. However, the variables are
-            improperly named, declared before they are needed and some of them are used for multiple things.
-            Without using your previous solution, modify the code so that it is easy to read and understand.*/
-
             int n = int.Parse(Console.ReadLine());
 
 

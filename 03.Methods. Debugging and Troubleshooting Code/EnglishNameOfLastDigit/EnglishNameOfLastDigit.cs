@@ -8,7 +8,7 @@ namespace EnglishNameOfLastDigit
         
         static string PrintNameInEnglish(long a) {
 
-            long lastDigit = Math.Abs(a % 10);    // moje da e minus
+            long lastDigit = Math.Abs(a % 10);   
 
             string result = "";
 
@@ -30,7 +30,7 @@ namespace EnglishNameOfLastDigit
         {
             long n = long.Parse(Console.ReadLine());   
            
-            string result = PrintNameInEnglish(n);    //  PRI DEBUGVANE S F11 SE VLIZA V METODITE !!!
+            string result = PrintNameInEnglish(n);    
             Console.WriteLine(result);       
         }
     }

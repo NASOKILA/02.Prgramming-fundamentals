@@ -10,15 +10,6 @@ namespace Practice_integers
     {
         static void Main(string[] args)
         {
-            /*Put the following numbers in the right integer format : 
-            -100
-            128
-            -3540
-            64876
-            2147483648
-            -1141583228
-            -1223372036854775808*/
-
 
             sbyte n1 = -100;
             byte n2 = 128;

@@ -11,7 +11,6 @@ namespace MathPower
 
         static void Main(string[] args)
         {
-
             double n = double.Parse(Console.ReadLine());
             double pow = double.Parse(Console.ReadLine());
             double mathPower = GetMathPower(n,pow);

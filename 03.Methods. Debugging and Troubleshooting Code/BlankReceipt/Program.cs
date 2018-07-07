@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace BlankReceipt
 {
     class Program
-    {   // ZA SEGA NQMA ZNACHENIE DALI DEKLARIRAME METODA PREDI MAIN ILI SLED NEGO !
-        // SLED VREME SHTE IMA ZASHTOTO KODA SHTE SE IZPULNQVA RED PO RED, NQMA DA IMA KOMPILACIQ !
-
+    {   
         private static void PrintReceipt()
         {
             PrintHeader();
@@ -35,7 +33,5 @@ namespace BlankReceipt
         {
             PrintReceipt();
         }
-
-
     }
 }

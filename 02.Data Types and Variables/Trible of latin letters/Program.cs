@@ -13,13 +13,13 @@ namespace Trible_of_latin_letters
 
             int n = int.Parse(Console.ReadLine());
 
-            char sinbols = (char)97;  // ot tuk zapochva azbukata s malki bukvi, do 122
+            char sinbols = (char)97;  
 
             for (char i = sinbols; i < sinbols + n; i++)
             { 
                 for (char j = sinbols; j < sinbols + n; j++)
                 {
-                    for (char h = sinbols; h < sinbols + n; h++) // h stava a posle b posle c i taka sled nego drugite ciklii !
+                    for (char h = sinbols; h < sinbols + n; h++) 
                     {
                         Console.WriteLine("{0}{1}{2}",i,j,h);
                     }

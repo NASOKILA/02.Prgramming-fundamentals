@@ -1,12 +1,10 @@
-﻿using System;
-
+﻿
 namespace ReverseAnArrayOfStrings
 {
+    using System;
+
     public class ReverseAnArrayOfStrings
     {
-
-    
-
         public static void Main(string[] args)
         {
             string letters =  Console.ReadLine();
@@ -16,9 +14,6 @@ namespace ReverseAnArrayOfStrings
             {
                 Console.Write(items[i] + " ");
             }
-
- // WE CAN USE Reverse();
-           
         }
     }
 }

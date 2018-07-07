@@ -15,7 +15,7 @@ namespace IntegerToHexAndBinary
             string nHex = Convert.ToString(n, 16).ToUpper();
             Console.WriteLine(nHex);
 
-            string nBinary = Convert.ToString(n, 2);  // we dont need to upper because it returns a string of numbers !
+            string nBinary = Convert.ToString(n, 2); 
             Console.WriteLine(nBinary);
         }
     }

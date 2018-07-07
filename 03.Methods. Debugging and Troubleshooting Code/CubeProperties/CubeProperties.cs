@@ -44,7 +44,5 @@ namespace CubeProperties
             double result = sideOfCube * sideOfCube * sideOfCube;
             Console.WriteLine("{0:f2}", result);
         }
-
-        
     }
 }

@@ -31,8 +31,6 @@ namespace Dynamic_i_Object
                 mario = "hahaha",
                 kiro = 4.5
             };
-
-            // Ima i osht za uchene no e za po napred
         }
     }
 }

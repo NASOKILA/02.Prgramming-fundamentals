@@ -12,7 +12,6 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-
             string copyNum = string.Empty;
             try
             {
@@ -51,9 +50,7 @@ namespace Practice
                 {
                     result.Add("long");
                 }
-
-
-
+                
                 if (result.Count.Equals(0))
                     Console.WriteLine($"{n} can't fit in any type");
                 else
@@ -70,8 +67,7 @@ namespace Practice
             {
                 Console.WriteLine($"{copyNum} can't fit in any type");
             }
-
-
+            
         }
     }
 }

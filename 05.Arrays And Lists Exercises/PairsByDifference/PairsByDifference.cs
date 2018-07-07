@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PairsByDifference
+﻿namespace PairsByDifference
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class PairsByDifference
     {
         static void Main(string[] args)
@@ -26,11 +26,9 @@ namespace PairsByDifference
                         pairs++;
                     }
                 }
-
             }
            
-                Console.WriteLine(pairs);
-
+            Console.WriteLine(pairs);
         }
     }
 }

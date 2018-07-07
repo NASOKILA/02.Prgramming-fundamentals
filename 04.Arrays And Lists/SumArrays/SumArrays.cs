@@ -1,8 +1,8 @@
-﻿using System;
-
-
+﻿
 namespace SumArrays
 {
+    using System;
+
     public class SumArrays
     {
         public static void Main(string[] args)
@@ -23,9 +23,7 @@ namespace SumArrays
             }
 
             int[] result = new int[Math.Max(items1.Length, items2.Length)];
-            //duljinata na result e kolkoto tazi na po dulgiq ot dvata masiva !
-
-
+            
             int[] ArrMin = new int[Math.Min(Arr1.Length, Arr2.Length)];
             for (int k = 0; k < ArrMin.Length; k++)
             {
@@ -38,10 +36,7 @@ namespace SumArrays
                     ArrMin[k] = Arr2[k];
                 }
             }
-            // opredelihme ArrMin[] koito e po malkiq masiv
-
-
-
+            
             int[] ArrMax = new int[Math.Max(Arr1.Length, Arr2.Length)];
             for (int k = 0; k < ArrMax.Length; k++)
             {
@@ -54,16 +49,11 @@ namespace SumArrays
                     ArrMax[k] = Arr2[k];
                 }
             }
-            // opredelihme ArrMax[] koito e po golqmiq masiv
-
-
-
+            
             int[] ArrFull = new int[ArrMax.Length];
-            // tova shte bude masiv s duljina na ArrMax[] no s elementite na ArrMin[]
             int counter = 0;
             for (int h = 0; h < ArrFull.Length; h++)
             {
-
                 if (h >= ArrMin.Length)
                 {
                     ArrFull[h] = ArrMin[counter];
@@ -71,12 +61,9 @@ namespace SumArrays
                     if (counter == ArrMin.Length) { counter = 0; }
                 }
                 else { ArrFull[h] = ArrMin[h]; }
-
             }
-
-
-
-            for (int i = 0; i < result.Length; i++)    // PRAVIM SI PRESMQTANETO
+            
+            for (int i = 0; i < result.Length; i++)
             {
                 if (Arr1.Length != Arr2.Length)
                 {
@@ -89,7 +76,6 @@ namespace SumArrays
                     Console.Write(result[i] + " ");
                 }
             }
-
         }
     }
 }

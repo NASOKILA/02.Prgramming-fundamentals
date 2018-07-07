@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaxSequenceOfEqualElements
+﻿namespace MaxSequenceOfEqualElements
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class MaxSequenceOfEqualElements
     {
         static void Main(string[] args)
         {
             List<int> n = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-
             
-
             int start = 0;
             int len = 1;
 
             int bestStart = 0;
             int bestLen = 0;
-            
             
             for (int i = 1; i < n.Count; i++)
             {
@@ -44,8 +41,8 @@ namespace MaxSequenceOfEqualElements
             {
                 Console.Write(n[i] + " ");
             }
-            Console.WriteLine();
 
+            Console.WriteLine();
         }
     }
 }

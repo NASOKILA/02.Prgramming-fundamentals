@@ -25,7 +25,7 @@ namespace CenterPoint
             else if (Y1 < 0 && resultY == Math.Abs(Y1)) { resultY = resultY - (resultY * 2.00);}
             else if (Y2 < 0 && resultY == Math.Abs(Y2)) { resultY = resultY - (resultY * 2.00); }
 
-            if (resultX == resultY) { Console.WriteLine("(" + X1 + ", " + Y1 + ")"); }  // ako sa ravni printirame purvoto
+            if (resultX == resultY) { Console.WriteLine("(" + X1 + ", " + Y1 + ")"); } 
             else { Console.WriteLine("(" + resultX + ", " + resultY + ")"); }
             
         }

@@ -5,12 +5,8 @@ namespace Factorial_Trailing_Zeroes
 {
     public class Factorial_Trailing_Zeroes
     {
-
-
-
         public static BigInteger PrintFactoriel(short n)
         {
-
             BigInteger fact = 1;
             BigInteger counter = 1;
             do
@@ -41,19 +37,15 @@ namespace Factorial_Trailing_Zeroes
 
 
             return numberOfZeros;
-
         }
 
         public static void Main(string[] args)
         {
             short n = short.Parse(Console.ReadLine());
-
-            // factoriel ot 5 e   1*2*3*4*5 = 120
-
+            
             BigInteger factoriel = PrintFactoriel(n);
             short numOfZeros = NumberOfZeros(factoriel);
             Console.WriteLine(numOfZeros);
-
         }
     }
 }

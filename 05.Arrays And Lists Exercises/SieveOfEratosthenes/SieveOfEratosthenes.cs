@@ -1,36 +1,33 @@
-﻿
-using System;
-using System.Collections.Generic;
-
-namespace SieveOfEratosthenes
+﻿namespace SieveOfEratosthenes
 {
+
+    using System;
+    using System.Collections.Generic;
+
     class SieveOfEratosthenes
     {
         static void Main(string[] args)
-        {           
-
+        {
             int n = int.Parse(Console.ReadLine());
-            // slow(n);
             fast(n);
         }
 
-        static bool IsPrime(int i) {
+        static bool IsPrime(int i)
+        {
 
-            
-                for (int j = 2; j < i; j++) // prime numbers start from 2
+            for (int j = 2; j < i; j++)
+            {
+                if (i % j == 0)
                 {
-                    if (i % j == 0)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
-            return true;       
+            }
+            return true;
         }
 
         static void fast(int n)
         {
-
-            bool[] primes = new bool[n + 1];  // pishe ot 0 do nvkluchitelno
+            bool[] primes = new bool[n + 1];
             for (int i = 0; i <= n; i++)
             {
                 primes[i] = true;
@@ -38,7 +35,7 @@ namespace SieveOfEratosthenes
 
             primes[0] = primes[1] = false;
 
-            for (int p = 2; p <= n ; p++)
+            for (int p = 2; p <= n; p++)
             {
                 if (primes[p] == true)
                 {

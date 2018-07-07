@@ -4,7 +4,6 @@ namespace MaxMethod
 {
     class Program
     {
-
         static int GetMax(int getA, int getB, int getC)
         {
             int result = 0;

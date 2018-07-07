@@ -14,7 +14,7 @@ namespace Greeting
             string lastName = Console.ReadLine();
             string age = Console.ReadLine();
 
-            int intAge = int.Parse(age); // PARSVAME GODINITE KUM CHISLO  ako napishem (int)age NQMA DA STANE !!!
+            int intAge = int.Parse(age); 
             Console.WriteLine("Hello, {0} {1}. You are {2} years old.",firstName,lastName,intAge);
 
         }

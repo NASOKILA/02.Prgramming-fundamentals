@@ -17,7 +17,7 @@ namespace SumAdjacentEqualNumbers
             int prevItem = 0;
 
             int counter = 0;
-            while (counter < nums.Count) // 3 puti  pri   3 3 6 1 
+            while (counter < nums.Count) 
             {            
                 if (nums[counter] == prevItem) {
                     
@@ -31,7 +31,6 @@ namespace SumAdjacentEqualNumbers
             }
 
             Console.WriteLine(string.Join(" ", nums));
-
         }
     }
 }

@@ -25,22 +25,21 @@ namespace ExtractMiddleElements
             {
                 Console.WriteLine(Arr[0]);
             }
-            else if (Arr.Length % 2 == 0)   // ako e chetno
+            else if (Arr.Length % 2 == 0)  
             {
-                int[] Even = new int[2]; // da ima dva elementa
+                int[] Even = new int[2]; 
                 Even[0] = Arr[Arr.Length / 2 - 1];
                 Even[1] = Arr[Arr.Length / 2];
                 Console.Write("{ " + Even[0] + ", " + Even[1] + " }");
             }
-            else if (Arr.Length % 2 == 1)   // ako e nechetno
+            else if (Arr.Length % 2 == 1)
             {
-                int[] Odd = new int[3]; // da ima 3 elementa
+                int[] Odd = new int[3]; 
                 Odd[0] = Arr[Arr.Length / 2 - 1];
                 Odd[1] = Arr[Arr.Length / 2];
                 Odd[2] = Arr[Arr.Length / 2 + 1];
                 Console.WriteLine("{ " + Odd[0] + ", " + Odd[1] + ", " + Odd[2] + " }");
             }
-
         }
     }
 }

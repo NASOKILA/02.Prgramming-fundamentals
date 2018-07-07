@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IndexOfLetters
+﻿namespace IndexOfLetters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class IndexOfLetters
     {
         static void Main(string[] args)
@@ -17,8 +17,6 @@ namespace IndexOfLetters
             {
                 Console.WriteLine("{0} -> {1}",word[i],(int)word[i] - 97);
             }
-
-
         }
     }
 }

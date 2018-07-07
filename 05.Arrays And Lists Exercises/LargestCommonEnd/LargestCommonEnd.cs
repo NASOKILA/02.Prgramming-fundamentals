@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LargestCommonEnd
+﻿namespace LargestCommonEnd
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class LargestCommonEnd
     {
-
-        static int ScanFromLeft(string[] firstArray, string[] secondArray) {
-
+        static int ScanFromLeft(string[] firstArray, string[] secondArray)
+        {
             int minLength = Math.Min(firstArray.Length, secondArray.Length);
 
             int count = 0;
@@ -24,14 +23,14 @@ namespace LargestCommonEnd
                 }
                 else
                 {
-                    if (maxCount < count) // zapazvame maksimalniq count
+                    if (maxCount < count)
                     {
                         maxCount = count;
                     }
                     count = 0;
                 }
             }
-            if (maxCount < count) 
+            if (maxCount < count)
             {
                 maxCount = count;
             }
@@ -41,7 +40,7 @@ namespace LargestCommonEnd
 
         static int ScanFromRight(string[] firstArray, string[] secondArray)
         {
-            
+
 
             int count = 0;
             int maxCount = 0;
@@ -59,7 +58,7 @@ namespace LargestCommonEnd
                     }
                     else
                     {
-                        if (maxCount < count) // zapazvame maksimalniq count
+                        if (maxCount < count)
                         {
                             maxCount = count;
                         }
@@ -80,7 +79,7 @@ namespace LargestCommonEnd
                         count++;
                     }
                     {
-                        if (maxCount < count) // zapazvame maksimalniq count
+                        if (maxCount < count)
                         {
                             maxCount = count;
                         }
@@ -89,7 +88,7 @@ namespace LargestCommonEnd
                     longArrayIndex--;
                 }
             }
-            if (maxCount < count) 
+            if (maxCount < count)
             {
                 maxCount = count;
             }
@@ -101,7 +100,7 @@ namespace LargestCommonEnd
         static void Main(string[] args)
         {
             string[] firstArray = Console.ReadLine().Split(' ').ToArray();
-            string[] secondArray = Console.ReadLine().Split(' ').ToArray();  
+            string[] secondArray = Console.ReadLine().Split(' ').ToArray();
 
             int maxCountLeft = ScanFromLeft(firstArray, secondArray);
             int maxCountRight = ScanFromLeft(firstArray, secondArray);

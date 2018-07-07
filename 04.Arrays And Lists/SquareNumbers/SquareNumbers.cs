@@ -17,12 +17,11 @@ namespace SquareNumbers
             for (var i = 0; i < numbers.Count; i++)
             {
                 if (Math.Sqrt(numbers[i]) == (int)Math.Sqrt(numbers[i]))
-                {    // tuk kazvame ako koren kv ot chisloto e  koren kv ot cqlo chislo
-                
+                {
                     result.Add(numbers[i]);
                 }
             }
-            result.Sort((a, b) => b.CompareTo(a));  // taka sortirame ot golqmo kum malko !
+            result.Sort((a, b) => b.CompareTo(a));  
             Console.WriteLine(string.Join(" ", result));
         }
     }

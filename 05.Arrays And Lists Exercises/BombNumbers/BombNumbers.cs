@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BombNumbers
+﻿namespace BombNumbers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class BombNumbers
     {
         static void Main(string[] args)
@@ -23,16 +23,16 @@ namespace BombNumbers
                 if (seqList[i] == specialNumber) {
 
                     int counter3 = 0;
-                    for (int j = i-1; j >= i - power; j--) // shte se izpulni kolkoto e powera
+                    for (int j = i-1; j >= i - power; j--) 
                     {
                         if (j < 0) { break; }
-                        seqList.RemoveAt(j); // mahame vsichki chisla v tazi dadena poziciq
+                        seqList.RemoveAt(j); 
                         counter3++;
                     }
 
                     int counter = 0;
                     int counter2 = i + 1 - counter3;
-                    while(counter < power) // shte se izpulni kolkoto e powera
+                    while(counter < power) 
                     {
                         seqList.RemoveAt(counter2);
                         counter++;
@@ -44,7 +44,6 @@ namespace BombNumbers
 
             for (int i = 0; i < seqList.Count; i++)
             {
-
                 if (seqList[i] != specialNumber) { sum = sum + seqList[i]; }       
             }
            

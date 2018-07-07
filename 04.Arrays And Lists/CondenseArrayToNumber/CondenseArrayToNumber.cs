@@ -28,7 +28,7 @@ namespace CondenseArrayToNumber
                     Cond[i] = Arr[i] + Arr[i + 1];
                 }
 
-                Arr = Cond; // slagame Arr da e ravno na cond, taka mu namalqvame duljinata s 1
+                Arr = Cond; 
               
             }
             Console.WriteLine(Arr[0]);
