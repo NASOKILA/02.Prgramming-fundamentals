@@ -10,6 +10,7 @@
     {
         static void Main(string[] args)
         {
+
             string input = Console.ReadLine();
             double[] numbers = input.Split(' ').Select(double.Parse).ToArray();
 
