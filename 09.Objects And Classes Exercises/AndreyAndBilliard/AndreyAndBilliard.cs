@@ -16,6 +16,7 @@
 
             string clients = Console.ReadLine();
             List<Costumer> Clients = new List<Costumer>();
+
             SetCostumerShopList(clients, Clients, Shop);
 
             PrintClientProductQuantityAndBill(Clients, Shop);
