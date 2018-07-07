@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MelrahShake
+﻿namespace MelrahShake
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class MelrahShake
     {
         static void Main(string[] args)
@@ -26,12 +26,9 @@ namespace MelrahShake
             int betsPerMonth = betsPerWeek * 4;
             int losses = 0;
             int wins = 0;
-            // wwl wwl wwl wwl
 
             for (int j = 0; j < months; j++)
             {
-
-
                 for (int i = 1; i <= betsPerMonth; i++)
                 {
                     if (i == 3 || i == 6 || i == 9 || i == 12)
@@ -47,16 +44,14 @@ namespace MelrahShake
                         if (bet > 33000) { bet = 33000; }
                         wins++;
                     }
-
-
                 }
             }
+
             double totalProfit = bankroll - 100.00;
 
             Console.WriteLine("Total Profit: {0}", totalProfit);
             Console.WriteLine("Total wins: {0}", wins);
             Console.WriteLine("Total losses: {0}", losses);
-
         }
     }
 }

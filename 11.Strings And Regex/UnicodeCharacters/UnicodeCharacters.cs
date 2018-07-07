@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UnicodeCharacters
+﻿namespace UnicodeCharacters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class UnicodeCharacters
     {
         static void Main(string[] args)
         {
-
-
             string value = Console.ReadLine();
 
             var chars = value
@@ -19,8 +17,8 @@ namespace UnicodeCharacters
                 .Select(c => $@"\u{c:x4}");
 
             var result = string.Concat(chars);
-            Console.WriteLine(result);
 
+            Console.WriteLine(result);
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LettersChangeNumbers
+﻿namespace LettersChangeNumbers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Numerics;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class LettersChangeNumbers
     {
         static void Main(string[] args)
@@ -14,8 +14,6 @@ namespace LettersChangeNumbers
             List<string> input = Console.ReadLine()
                 .Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
                 .ToList();  
-            // SPLITVAME I PO TABULACIQ MNOGO E VAJNO !!! AKO IMA TAKAVA VINAGI TRQBVA DA SPLITVAME PO NEW
-
 
            decimal totalSum = 0;
             for (int i = 0; i < input.Count; i++)
@@ -41,12 +39,10 @@ namespace LettersChangeNumbers
                 else
                     num = num + ((int)lastLetter - 96);
 
-                totalSum += num;
-
+                totalSum += num;    
             }
 
             Console.WriteLine($"{totalSum:f2}");
-
         }
     }
 }

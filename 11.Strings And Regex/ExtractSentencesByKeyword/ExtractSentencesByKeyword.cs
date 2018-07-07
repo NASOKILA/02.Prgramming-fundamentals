@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace ExtractSentencesByKeyword
+﻿namespace ExtractSentencesByKeyword
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
+
     class ExtractSentencesByKeyword
     {
         static void Main(string[] args)
@@ -16,8 +16,6 @@ namespace ExtractSentencesByKeyword
             string text = Console.ReadLine();
 
             string pattern = @"(?:[\s\-\,a-zA-Z0-9]+!|[\s\-\,a-zA-Z0-9]+\.|[\s\-\,a-zA-Z0-9]+\?)";
-            // namirame vsichki izrecheniq    MOJEM PROSTO DA SPLITNEM STRINGA NA . ! ? I PAK SHTE STANE I TO BEZ REGEX
-
 
             Regex regex = new Regex(pattern);
             MatchCollection matches = regex.Matches(text);
@@ -32,8 +30,6 @@ namespace ExtractSentencesByKeyword
                     Console.WriteLine(result.Trim());
                 }
             }
-            
-
         }
     }
 }
