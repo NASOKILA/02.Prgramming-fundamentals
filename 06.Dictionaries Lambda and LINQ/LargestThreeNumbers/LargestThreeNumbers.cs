@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LargestThreeNumbers
+﻿namespace LargestThreeNumbers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class LargestThreeNumbers
     {
         static void Main(string[] args)
@@ -21,8 +21,6 @@ namespace LargestThreeNumbers
 
            var result = nums.Take(nTimes);
             Console.WriteLine(string.Join(" ",result));
-
-            // TOVA MOJE DA STANE SAMO NA EDIN RED sus samo edna promenliva
         }
     }
 }

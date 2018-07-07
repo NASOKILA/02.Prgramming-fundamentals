@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-
-namespace LegendaryFarming
+﻿namespace LegendaryFarming
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     class LegendaryFarming
     {
         static void Main(string[] args)
@@ -14,7 +13,6 @@ namespace LegendaryFarming
             LegendaryItems["Valanyr"] = "fragments";
             LegendaryItems["Dragonwrath"] = "motes";
 
-            
             Dictionary<string, int> MaterialsAndQuantity = new Dictionary<string, int>();
             Dictionary<string, int> KeyMaterialsAndQuantity = new Dictionary<string, int>();
             Dictionary<string, int> JunkAndQuantity = new Dictionary<string, int>();
@@ -24,17 +22,12 @@ namespace LegendaryFarming
             List<string> inputStrings = new List<string>();
             List<string> legendaryItem = new List<string>();
 
-
-
             GetAllMaterials(input, inputInts, inputStrings, MaterialsAndQuantity);
-            
 
             SplitMaterialsIntoJunkAndKeyMaterials(MaterialsAndQuantity, KeyMaterialsAndQuantity, JunkAndQuantity);
-           
 
             AddMissingKeyMaterial(KeyMaterialsAndQuantity);
 
-            
             GetLegendaryItem(KeyMaterialsAndQuantity, legendaryItem, LegendaryItems);
 
             string legendaryItemStr = legendaryItem[0];
@@ -46,19 +39,19 @@ namespace LegendaryFarming
         {
             for (int i = 0; i < input.Count; i++)
             {
-                if (i.Equals(18)) { break; } // ako ima poveche ot 9 elementa izlezni zashtoto ne te se ignorirat!
+                if (i.Equals(18)) { break; }
 
-                if (i % 2 == 0)          // slagame vsichki nomera v spisuka inputInts
+                if (i % 2 == 0)
                     inputInts.Add(int.Parse(input[i]));
-                else                       // slagame vsichki stringove v spisuka inputStrings
+                else
                     inputStrings.Add(input[i].ToLower());
             }
 
-            for (int i = 0; i < inputInts.Count; i++) // slagame vsichki materiali v materials
+            for (int i = 0; i < inputInts.Count; i++)
             {
-                if (MaterialsAndQuantity.Keys.Contains(inputStrings[i]))  // ako imeto se povtarq 
+                if (MaterialsAndQuantity.Keys.Contains(inputStrings[i]))
                 {
-                    MaterialsAndQuantity[inputStrings[i]] += inputInts[i];  // uvelichavame samo stoinostta
+                    MaterialsAndQuantity[inputStrings[i]] += inputInts[i];
                 }
                 else
                     MaterialsAndQuantity[inputStrings[i]] = inputInts[i];
@@ -70,7 +63,7 @@ namespace LegendaryFarming
         private static void SplitMaterialsIntoJunkAndKeyMaterials(Dictionary<string, int> MaterialsAndQuantity,
             Dictionary<string, int> KeyMaterialsAndQuantity, Dictionary<string, int> JunkAndQuantity)
         {
-            foreach (var material in MaterialsAndQuantity) // razdelqme materialite na junk i keyMaterial
+            foreach (var material in MaterialsAndQuantity)
             {
                 if (material.Key.Equals("fragments") || material.Key.Equals("motes") || material.Key.Equals("shards"))
                     KeyMaterialsAndQuantity[material.Key] = material.Value;
@@ -82,7 +75,7 @@ namespace LegendaryFarming
 
         private static void AddMissingKeyMaterial(Dictionary<string, int> KeyMaterialsAndQuantity)
         {
-            if (KeyMaterialsAndQuantity.Count < 3) // ako lipsva Key MAterial go dobavqme s nuleva stoinost !
+            if (KeyMaterialsAndQuantity.Count < 3)
             {
 
                 foreach (var material in KeyMaterialsAndQuantity)
@@ -111,7 +104,7 @@ namespace LegendaryFarming
         private static void GetLegendaryItem(Dictionary<string, int> KeyMaterialsAndQuantity, List<string> legendaryItem, Dictionary<string, string> LegendaryItems)
         {
 
-            foreach (var material in KeyMaterialsAndQuantity) // keep track of key materials and get LEGENDARY ITEM
+            foreach (var material in KeyMaterialsAndQuantity)
             {
                 if (material.Value >= 250)
                 {
@@ -120,23 +113,21 @@ namespace LegendaryFarming
 
                     break;
                 }
-
             }
-
         }
 
 
-        private static void PrintResult( string legendaryItemStr, Dictionary<string, int> keyMaterialsAndQuantity, 
+        private static void PrintResult(string legendaryItemStr, Dictionary<string, int> keyMaterialsAndQuantity,
             Dictionary<string, int> junkAndQuantity)
         {
 
-            Console.WriteLine("{0} obtained!", legendaryItemStr); // print legendary item
-            foreach (var item in keyMaterialsAndQuantity.OrderByDescending(x => x.Value)) // print keymaterials by quantity
+            Console.WriteLine("{0} obtained!", legendaryItemStr);
+            foreach (var item in keyMaterialsAndQuantity.OrderByDescending(x => x.Value))
             {
                 Console.WriteLine("{0}: {1}", item.Key, item.Value);
             }
 
-            foreach (var item in junkAndQuantity.OrderBy(x => x.Key)) // print the junk ordered alphabetically
+            foreach (var item in junkAndQuantity.OrderBy(x => x.Key))
             {
                 Console.WriteLine("{0}: {1}", item.Key, item.Value);
             }

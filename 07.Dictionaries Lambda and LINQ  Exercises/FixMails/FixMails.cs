@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FixMails
+﻿namespace FixMails
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class FixMails
     {
         static void Main(string[] args)
@@ -14,11 +14,8 @@ namespace FixMails
             string name = Console.ReadLine();
             var dict = new Dictionary<string, string>();
 
-
-            //AKO IZPOLZVAME == SRUVNQVAME SAMO ADRESITE PO DOBRE DA POLZVAME Equals()
             while (!name.Equals("stop"))
             {
-
                 string email = Console.ReadLine();
 
                 dict[name] = email;

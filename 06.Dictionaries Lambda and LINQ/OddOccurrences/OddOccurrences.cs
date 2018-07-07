@@ -1,39 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OddOccurrences
+﻿namespace OddOccurrences
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
     class OddOccurrences
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine().ToLower();  // slagame ToLower()
+            string input = Console.ReadLine().ToLower();  
             string[] words = input.Split(' ').ToArray();
-
-
-
-            Dictionary<string, int> counts = new Dictionary<string, int>(); // rechnika e absolutno prazen
-            // suzdavame rechnik sus v sluchaq dumi i broi povtoreniq
+            
+            Dictionary<string, int> counts = new Dictionary<string, int>();
 
             foreach (var word in words)
             {
                 if (counts.ContainsKey(word))
                 {
-                    counts[word]++; // ako sudurja dumata  dobavi 1
+                    counts[word]++;
                 }
                 else
                 {
-                    counts[word] = 1;  // ako ne sudurja dumata, q dobavi i napravi stoinosta na 1
+                    counts[word] = 1;  
                 }
             }
 
             var results = new List<string>();
+
             foreach (var pair in counts)
             {
-                if (pair.Value % 2 == 1) // ako Stoinosta e nechetna 
+                if (pair.Value % 2 == 1)
                 {
                     results.Add(pair.Key);
                 }              
@@ -41,6 +39,5 @@ namespace OddOccurrences
 
             Console.WriteLine(string.Join(", ",results));
         }
-        
     }
 }

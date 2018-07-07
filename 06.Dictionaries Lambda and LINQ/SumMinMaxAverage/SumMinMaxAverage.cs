@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-
-namespace SumMinMaxAverage
+﻿namespace SumMinMaxAverage
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     class SumMinMaxAverage
     {
         static void Main(string[] args)
         {
-
             int n = int.Parse(Console.ReadLine());
             int[] nums = new int[n];
             

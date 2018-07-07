@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LogsAggregator
+﻿namespace LogsAggregator
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class LogsAggregator
     {
         static void Main(string[] args)
@@ -28,30 +28,25 @@ namespace LogsAggregator
                 int duration = int.Parse(inputArr[2]);
 
 
-
-                if (!userDuration.ContainsKey(name)) // ako tova ime go nqma 
+                if (!userDuration.ContainsKey(name))
                 {
                     userDuration[name] = duration;
-                     oldDuration = duration;
+                    oldDuration = duration;
 
                     userIps[name] = new List<string>();
-                    userIps[name].Add(ip);                
+                    userIps[name].Add(ip);
                 }
                 else
                 {
-                    if (!userIps[name].Contains(ip)) // ako ne sudirja takuv ip
+                    if (!userIps[name].Contains(ip))
                     {
-                        userIps[name].Add(ip); // go sloji
+                        userIps[name].Add(ip);
                     }
 
                     duration += userDuration[name];
                     userDuration[name] = duration;
-
                 }
-                
-
             }
-
 
             PrintNameDurationIp(userDuration, userIps);
         }
@@ -59,39 +54,13 @@ namespace LogsAggregator
         private static void PrintNameDurationIp(SortedDictionary<string, int> userDuration,
             SortedDictionary<string, List<string>> userIps)
         {
-           // int counterforComas = 1;
-
             foreach (var user in userDuration)
             {
                 string userName = user.Key;
                 int totalDuration = userDuration[user.Key];
                 List<string> allIps = userIps[user.Key].ToList();
 
-                Console.WriteLine("{0}: {1} [{2}]", userName, totalDuration, string.Join(", ",allIps));
-
-
-
-
-
-            //    Console.Write("{0}: {1} [",user.Key, user.Value);
-            //    foreach (var ip in userIps[user.Key].OrderBy(x => x))
-            //    {
-            //        Console.Write(ip);
-
-            //        if (!counterforComas.Equals(userIps[user.Key].Count))
-            //        {
-            //            Console.Write(", ");
-            //            counterforComas++;
-            //        }
-                  
-
-
-            //    }
-            //    Console.WriteLine("]");
-            //    counterforComas = 1;
-
-
-
+                Console.WriteLine("{0}: {1} [{2}]", userName, totalDuration, string.Join(", ", allIps));
             }
         }
     }
