@@ -10,13 +10,13 @@ namespace Centuries_to_minutes
     {
         static void Main(string[] args)
         {
-            //convert centuries into years days hours and minutes
+            //convert centuries into years days, hours and minutes
 
             Console.Write("Centuries = ");
             int centuries = int.Parse(Console.ReadLine());
             int years = centuries * 100;
             int days = (int)(years * 365.2422);
-            int hours = days * 24;
+            int hours = days * 24; 
             int minutes = hours * 60;
             
               
