@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace WinningTicket2
+﻿namespace WinningTicket2
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
+
     class WinningTicket2
     {
         static void Main(string[] args)
@@ -16,7 +16,6 @@ namespace WinningTicket2
                .Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries)
                .Select(c => c.Trim()).ToArray();
 
-
             foreach (var ticket in tickets)
             {
                 if (!ticket.Length.Equals(20))
@@ -24,43 +23,41 @@ namespace WinningTicket2
                     Console.WriteLine("invalid ticket");
                     continue;
                 }
-               
 
-                    var left = new string(ticket.Take(10).ToArray());
-                    var right = new string(ticket.Skip(10).ToArray());
+                var left = new string(ticket.Take(10).ToArray());
+                var right = new string(ticket.Skip(10).ToArray());
 
-                    string[] winningSymbols = new string[] {"@", "#", "\\$", "\\^"};
-                    bool winningTicket = false;
+                string[] winningSymbols = new string[] { "@", "#", "\\$", "\\^" };
+                bool winningTicket = false;
 
-                    foreach (var  winningSymbol in winningSymbols)
+                foreach (var winningSymbol in winningSymbols)
+                {
+                    Regex regex = new Regex($"{winningSymbol}{{6,}}");
+                    Match leftMatch = regex.Match(left);
+                    if (leftMatch.Success)
                     {
-                        Regex regex = new Regex($"{winningSymbol}{{6,}}"); // suzdavame regeksite
-                        Match leftMatch = regex.Match(left);
-                        if (leftMatch.Success) // ako ima match
+                        Match rightMatch = regex.Match(right);
+                        if (rightMatch.Success)
                         {
-                            Match rightMatch = regex.Match(right);
-                            if (rightMatch.Success)
-                            {
-                                winningTicket = true;
+                            winningTicket = true;
 
-                                var leftSymbolsLength = leftMatch.Value.Length;
-                                var rightSymbolsLength = rightMatch.Value.Length;
-                                var jackpot = leftSymbolsLength == 10 && rightSymbolsLength == 10
-                                    ? " Jackpot"
-                                    : string.Empty;
-                                // ako symbolsLength == 10 dai jackpot ako ne dai praen string
+                            var leftSymbolsLength = leftMatch.Value.Length;
+                            var rightSymbolsLength = rightMatch.Value.Length;
+                            var jackpot = leftSymbolsLength == 10 && rightSymbolsLength == 10
+                                ? " Jackpot"
+                                : string.Empty;
 
-                                Console.WriteLine($"ticket \"{ticket}\" - {Math.Min(leftSymbolsLength, rightSymbolsLength)}{winningSymbol.Trim('\\')}{jackpot}");
-                                break;
-                            }
+                            Console.WriteLine($"ticket \"{ticket}\" - {Math.Min(leftSymbolsLength, rightSymbolsLength)}{winningSymbol.Trim('\\')}{jackpot}");
+                            break;
                         }
                     }
+                }
 
-                    if (!winningTicket)
-                        Console.WriteLine($"ticket \"{ticket}\" - no match");
+                if (!winningTicket)
+                    Console.WriteLine($"ticket \"{ticket}\" - no match");
 
-                
             }
         }
     }
 }
+    

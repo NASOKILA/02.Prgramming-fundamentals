@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EnduranceRally
+﻿namespace EnduranceRally
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class EnduranceRally
     {
         static void Main(string[] args)
         {
 
             string[] partecipants = Console.ReadLine()
-                .Split(new[] { ' ' },StringSplitOptions.RemoveEmptyEntries).ToArray();
+                .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
 
             double[] trackLayout = Console.ReadLine()
                 .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
@@ -29,8 +29,8 @@ namespace EnduranceRally
 
                 foreach (double track in trackLayout)
                 {
-                    
-                    if (checkPoints.Any( z => z == Array.IndexOf(trackLayout, track)))
+
+                    if (checkPoints.Any(z => z == Array.IndexOf(trackLayout, track)))
                         fuel += track;
                     else
                         fuel -= track;
@@ -43,9 +43,8 @@ namespace EnduranceRally
                     }
                 }
 
-                if(!reachedZero)
-                Console.WriteLine($"{partecipant} - fuel left {fuel:f2}");
-
+                if (!reachedZero)
+                    Console.WriteLine($"{partecipant} - fuel left {fuel:f2}");
             }
         }
     }

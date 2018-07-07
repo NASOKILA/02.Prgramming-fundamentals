@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EnduranceRally2
+﻿namespace EnduranceRally2
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class EnduranceRally2
     {
         static void Main(string[] args)
@@ -44,7 +44,7 @@ namespace EnduranceRally2
                         break;
                     }
                 }
-            
+
                 if (!reachedZero)
                     Console.WriteLine($"{partecipant} - fuel left {fuel:f2}");
 

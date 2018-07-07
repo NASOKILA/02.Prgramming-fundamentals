@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoftUniKaraoke
+﻿namespace SoftUniKaraoke
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class SoftUniKaraoke
     {
         static void Main(string[] args)
@@ -34,28 +34,28 @@ namespace SoftUniKaraoke
                 string song = commandArr[1];
                 string reward = commandArr[2]; 
 
-                if (partecipants.Contains(singer) && allSongs.Contains(song)) // ako peveca i pesenta suvpadat
+                if (partecipants.Contains(singer) && allSongs.Contains(song)) 
                 {
                     List<string> Rewards = new List<string>();
 
 
-                    if (!SingerAndRewards.Keys.Contains(singer))// ako nqma takuv pevec
+                    if (!SingerAndRewards.Keys.Contains(singer))
                     {
-                        Rewards.Add(reward); // dobavqme mu nagradata 
-                        SingerAndRewards[singer] = Rewards; // dobavqme peveca 
+                        Rewards.Add(reward); 
+                        SingerAndRewards[singer] = Rewards; 
                     }
                     else
                     {
 
-                        if (!SingerAndRewards[singer].Contains(reward))  // ako tozi pevec ne sudurja tozi reward
+                        if (!SingerAndRewards[singer].Contains(reward))  
                         {
 
                             foreach (var rewardd in SingerAndRewards[singer])
                             {
-                                Rewards.Add(rewardd);  // dobvqme si vsichki rewardove na tozi pevec vuv Rewards
+                                Rewards.Add(rewardd);  
                             }
 
-                            Rewards.Add(reward); // dobavqme si i tozi reward koito e noviq
+                            Rewards.Add(reward); 
      
                             SingerAndRewards[singer] = Rewards;
                         }                       
@@ -66,8 +66,7 @@ namespace SoftUniKaraoke
                 command = Console.ReadLine();
             }
 
-
-
+            
             foreach (var singeer in SingerAndRewards
                 .OrderByDescending(r => r.Value.Count)
                 .ThenBy(p => p.Key))
@@ -81,11 +80,9 @@ namespace SoftUniKaraoke
                 }
             }
 
-            if(!SingerAndRewards.Any())   // Any() oznachava v sluchaq    .Count.Equals(0)
+            if(!SingerAndRewards.Any())   
                 Console.WriteLine("No awards");
-
-
-
+            
         }
     }
 }
