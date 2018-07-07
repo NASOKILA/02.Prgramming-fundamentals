@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Files
+﻿namespace Files
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class Files
     {
         static void Main(string[] args)
         {
-
-            // WHITOUT CLASSES
 
             int n = int.Parse(Console.ReadLine());
 
@@ -19,9 +17,6 @@ namespace Files
             Dictionary<string, long> NameSize = new Dictionary<string, long>();
             for (int i = 0; i < n; i++)
             {
-
-
-
                 List<string> file = Console.ReadLine().Split(new char[] { '\\', ';' }
                 , StringSplitOptions.RemoveEmptyEntries).ToList();
 
@@ -36,13 +31,8 @@ namespace Files
 
                 if (inputData.ContainsKey(root))
                 {
-                    // ako veche sudurja takuv kluch dobavqme kum nego samo name i size
-                    // taka ne dobavq nov kluch kum input data
 
                     inputData[root][name] = size;
-                    // STAVA I TAKA : inputData[root].Add(name, size);
-
-                    // v uslovieto kazva "save only its latest value "  To go pravi avtomatichno
                 }
                 else
                 {
@@ -50,13 +40,10 @@ namespace Files
                     NameSize = new Dictionary<string, long>();
                     NameSize[name] = size;
 
-
                     inputData[root] = NameSize;
-
                 }
 
             }
-
 
 
             string[] command = Console.ReadLine().Split().ToArray();
@@ -66,45 +53,25 @@ namespace Files
             bool printed = false;
 
             if (inputData.Keys.Contains(searchRoot))
-            { 
+            {
                 NameSize = inputData[searchRoot]
                      .OrderByDescending(id => id.Value)
                      .ThenBy(p => p.Key)
-                     .ToDictionary(id => id.Key, id => id.Value); // pravim go na direktoriq
+                     .ToDictionary(id => id.Key, id => id.Value);
 
 
 
-            foreach (var pair in NameSize)
-            {
-                //  string fileExtention = pair.Key.Split('.').Last();
-                if (pair.Key.Contains(type))
+                foreach (var pair in NameSize)
                 {
-                    Console.WriteLine($"{pair.Key} - {pair.Value} KB");
-                    printed = true;
+                    if (pair.Key.Contains(type))
+                    {
+                        Console.WriteLine($"{pair.Key} - {pair.Value} KB");
+                        printed = true;
+                    }
                 }
             }
 
-
-        }
-
-            //foreach (var pair in inputData)
-            //{
-            //    if (pair.Key.Equals(searchRoot))
-            //    {
-            //        foreach (var value in pair.Value
-            //            .OrderByDescending(p => p.Value)
-            //            .ThenBy(p => p.Key))
-            //        {
-            //            if (value.Key.Contains(type))
-            //            {
-            //                Console.WriteLine($"{value.Key} - {value.Value} KB");
-            //                printed = true;
-            //            }
-            //        }
-            //    }
-            //}
-
-            if(!printed)
+            if (!printed)
                 Console.WriteLine("No");
 
         }

@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RageQuit
+﻿namespace RageQuit
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class RageQuit
     {
         static void Main(string[] args)
         {
-            string[] splitter = { "0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
-          
+            string[] splitter = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" };
 
-           
             string input = Console.ReadLine().ToUpper();
 
             string[] letters = input.Split(splitter, StringSplitOptions.RemoveEmptyEntries).ToArray();
+
             int[] numbers = input.Split(letters, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
             List<string> charachtersCount = new List<string>();
@@ -24,9 +23,9 @@ namespace RageQuit
             for (int i = 0; i < letters.Length; i++)
             {
                 foreach (var charachter in letters[i])
-                {                   
-                        if (!charachtersCount.Contains(charachter.ToString()))  // ako ne sudurja tazi bukva q dobavi
-                            charachtersCount.Add(charachter.ToString());
+                {
+                    if (!charachtersCount.Contains(charachter.ToString()))
+                        charachtersCount.Add(charachter.ToString());
                 }
             }
 
@@ -38,12 +37,10 @@ namespace RageQuit
                 for (int i = 0; i < numbers[counter]; i++)
                 {
                     Console.Write(letter);
-                    
                 }
+
                 counter++;
             }
-
-
         }
     }
 }
